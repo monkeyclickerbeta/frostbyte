@@ -25,15 +25,18 @@
   position: relative;
   will-change: transform, background-color, border-color;
   transform: translateZ(0);
+  -webkit-tap-highlight-color: transparent;
 }
 
-.theme-toggle-btn:hover {
+.theme-toggle-btn:hover,
+.theme-toggle-btn:active {
   background: rgba(255, 255, 255, 0.2);
   border-color: rgba(255, 255, 255, 0.3);
   transform: scale(1.1);
 }
 
-.theme-toggle-btn:hover .theme-icon {
+.theme-toggle-btn:hover .theme-icon,
+.theme-toggle-btn:active .theme-icon {
   transform: rotate(15deg);
 }
 
@@ -66,7 +69,6 @@
   }
 }
 
-/* Theme and backgrounds */
 body {
   background-image: url("bgLight.avif");
   margin: 0;
@@ -106,14 +108,14 @@ body::before {
   z-index: -1;
 }
 
-/* Form inputs */
 form input {
   background: #b1c7ee;
   border: 1px solid #b1c7ee;
   color: #000;
   padding: 0 17px;
   height: 48px;
-  width: 800px;
+  width: 90%;
+  max-width: 800px;
   margin-top: 15px;
   border-radius: 50px;
   outline: none;
@@ -124,6 +126,8 @@ form input {
     box-shadow 0.3s ease;
   will-change: background, border-color, box-shadow;
   transform: translateZ(0);
+  font-size: 16px;
+  -webkit-appearance: none;
 }
 
 form input:focus,
@@ -137,7 +141,6 @@ form input:focus:hover {
   animation-iteration-count: 0;
 }
 
-/* Dark theme form inputs */
 body.dark-theme form input {
   background: #30488a;
   border: 1px solid #30488a;
@@ -150,7 +153,6 @@ body.dark-theme form input:hover {
   border: 1px solid #2f4064;
 }
 
-/* Text colors */
 .left-margin,
 #uv-register-sw {
   color: #000;
@@ -171,7 +173,6 @@ body.dark-theme .bottomText {
   color: #4872c0;
 }
 
-/* Animations */
 @keyframes dropIn {
   from {
     filter: blur(5px);
@@ -215,7 +216,6 @@ body.dark-theme .bottomText {
   animation-fill-mode: forwards;
 }
 
-/* Layout */
 .flex-center,
 .header-center {
   display: flex;
@@ -226,6 +226,7 @@ body.dark-theme .bottomText {
 
 .header-center {
   margin-top: 10%;
+  padding: 0 20px;
 }
 
 .center-margin {
@@ -237,10 +238,11 @@ body.dark-theme .bottomText {
   margin: 0 16px;
 }
 
-/* Elements */
 .banner {
-  width: 720px;
-  height: 280px;
+  width: 90%;
+  max-width: 720px;
+  height: auto;
+  aspect-ratio: 720/280;
   transition: opacity 0.2s ease;
   will-change: opacity;
   backface-visibility: hidden;
@@ -252,6 +254,7 @@ body.dark-theme .bottomText {
   bottom: 10px;
   letter-spacing: 1px;
   font-weight: 700;
+  font-size: 14px;
 }
 
 .bottomText.left {
@@ -264,9 +267,11 @@ body.dark-theme .bottomText {
 
 a {
   text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
-a:hover {
+a:hover,
+a:active {
   text-decoration: underline;
 }
 
@@ -277,7 +282,6 @@ a:hover {
   user-select: none;
 }
 
-/* UV Frame and Error Elements */
 #uv-frame {
   display: none;
   border: none;
@@ -292,11 +296,15 @@ a:hover {
 #uv-error {
   color: #ff6666 !important;
   white-space: pre-wrap;
+  padding: 0 20px;
+  text-align: center;
 }
 
 #uv-error-code {
   font-size: 12px;
   font-family: "Courier New", Courier, monospace;
+  padding: 0 20px;
+  overflow-x: auto;
 }
 
 #uv-register-sw {
@@ -309,6 +317,7 @@ a:hover {
   padding: 16px 20px;
   line-height: 16px;
   display: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 #uv-register-sw:active {
@@ -319,27 +328,53 @@ a:hover {
   display: block;
 }
 
-/* Mobile Responsive */
 @media screen and (max-width: 768px) {
-  form input {
-    width: 80%;
-    max-width: 400px;
-    margin: 15px auto 0;
-  }
-
   .header-center {
-    margin-top: 30%;
+    margin-top: 20%;
   }
 
-  .banner {
-    width: 90%;
-    max-width: 400px;
-    height: auto;
-    aspect-ratio: 720/280;
+  form input {
+    width: 85%;
+    height: 52px;
+    font-size: 16px;
+  }
+
+  .theme-toggle-container {
+    top: 15px;
+    right: 15px;
+  }
+
+  .theme-toggle-btn {
+    width: 45px;
+    height: 45px;
   }
 
   .bottomText {
-    font-size: 14px;
+    font-size: 12px;
     letter-spacing: 0.5px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header-center {
+    margin-top: 25%;
+  }
+
+  form input {
+    width: 90%;
+    padding: 0 15px;
+  }
+
+  .bottomText {
+    font-size: 10px;
+    bottom: 8px;
+  }
+
+  .bottomText.left {
+    left: 8px;
+  }
+
+  .bottomText.right {
+    right: 8px;
   }
 }
