@@ -14,14 +14,6 @@
       href="https://fonts.googleapis.com/css?family=Product+Sans"
       rel="stylesheet"
     />
-    <script>
-      (function () {
-        const savedTheme = localStorage.getItem("theme");
-        if (savedTheme === "dark") {
-          document.documentElement.classList.add("dark-theme");
-        }
-      })();
-    </script>
     <script src="baremux/index.js" defer></script>
     <script src="epoxy/index.js" defer></script>
     <script src="uv/uv.bundle.js" defer></script>
@@ -32,19 +24,9 @@
   </head>
 
   <body>
-    <div class="theme-toggle-container">
-      <button
-        id="theme-toggle"
-        class="theme-toggle-btn unselectable"
-        aria-label="Toggle theme"
-      >
-        <span class="theme-icon">🌙</span>
-      </button>
-    </div>
-    <div class="flex-center header-center dropIn unselectable">
-      <img id="banner-img" src="" alt="frostbyte banner" class="banner" />
-    </div>
-    <form autocomplete="off" id="uv-form" class="flex-center blurOut">
+    <div class="flex-center header-center dropIn unselectable"></div>
+
+    <form autocomplete="off" id="uv-form" class="flex-center blurOut" style="display:flex; justify-content:center; width:100%; margin-top:50px;">
       <input
         autocomplete="false"
         id="uv-search-engine"
@@ -56,13 +38,15 @@
         id="uv-address"
         type="text"
         placeholder="Search without restrictions"
+        style="width:50%; padding:10px; font-size:16px;"
       />
     </form>
-    <p></p>
+
     <div class="center-margin">
       <p id="uv-error"></p>
       <pre id="uv-error-code"></pre>
     </div>
+
     <div class="bottomText unselectable left">frostbyte v1.0.0</div>
     <div class="bottomText unselectable right">
       <a
@@ -72,6 +56,7 @@
         >Github</a
       >
     </div>
+
     <iframe id="uv-frame" title="Proxy Content Frame"></iframe>
   </body>
 </html>
