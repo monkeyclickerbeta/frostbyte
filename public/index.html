@@ -32,7 +32,7 @@
   </head>
   <body>
     <script>
-      if (window.location.pathname === '/' && window.name !== 'ab') {
+      if (window.location.pathname === '/' && window.name !== 'ab' && !localStorage.getItem('skip_ab')) {
         var w = window.open('about:blank');
         if (w) {
           w.document.write('<!DOCTYPE html><html><head><title>New Tab</title><style>*{margin:0;padding:0}body,html{width:100%;height:100%;overflow:hidden}iframe{border:0;width:100%;height:100%;display:block}</style></head><body><iframe name="ab" src="' + window.location.origin + '/" allow="fullscreen"></iframe></body></html>');
@@ -52,7 +52,7 @@
       </button>
     </div>
     <div class="flex-center header-center dropIn unselectable">
-      <img id="banner-img" src="" alt="frostbyte banner" class="banner" />
+      <img id="banner-img" src="" alt="Phosphur Banner" class="banner" />
     </div>
     <form autocomplete="off" id="uv-form" class="flex-center blurOut">
       <input
