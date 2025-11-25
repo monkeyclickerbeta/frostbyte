@@ -14,6 +14,55 @@
       href="https://fonts.googleapis.com/css?family=Product+Sans"
       rel="stylesheet"
     />
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: 'Product Sans', sans-serif;
+      }
+
+      #uv-form {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
+
+      #uv-address {
+        width: 50%;
+        padding: 12px;
+        font-size: 16px;
+        text-align: center;
+      }
+
+      /* Placeholder text color */
+      #uv-address::placeholder {
+        color: darkblue;
+        text-align: center;
+      }
+
+      .bottomText {
+        position: fixed;
+        font-size: 14px;
+      }
+
+      .bottomText.left {
+        bottom: 10px;
+        left: 10px;
+      }
+
+      .bottomText.right {
+        bottom: 10px;
+        right: 10px;
+      }
+
+      #uv-frame {
+        display: none;
+      }
+    </style>
     <script src="baremux/index.js" defer></script>
     <script src="epoxy/index.js" defer></script>
     <script src="uv/uv.bundle.js" defer></script>
@@ -24,9 +73,7 @@
   </head>
 
   <body>
-    <div class="flex-center header-center dropIn unselectable"></div>
-
-    <form autocomplete="off" id="uv-form" class="flex-center blurOut" style="display:flex; justify-content:center; width:100%; margin-top:50px;">
+    <form autocomplete="off" id="uv-form" class="blurOut">
       <input
         autocomplete="false"
         id="uv-search-engine"
@@ -38,17 +85,11 @@
         id="uv-address"
         type="text"
         placeholder="Search without restrictions"
-        style="width:50%; padding:10px; font-size:16px;"
       />
     </form>
 
-    <div class="center-margin">
-      <p id="uv-error"></p>
-      <pre id="uv-error-code"></pre>
-    </div>
-
-    <div class="bottomText unselectable left">frostbyte v1.0.0</div>
-    <div class="bottomText unselectable right">
+    <div class="bottomText left">frostbyte v1.0.0</div>
+    <div class="bottomText right">
       <a
         href="https://github.com/iceycolduser/frostbyte"
         rel="noopener"
