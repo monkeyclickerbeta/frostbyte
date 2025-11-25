@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <title>frostbyte</title>
+    <meta name="description" content="A simple but powerful proxy" />
+    <link rel="shortcut icon" content="favicon.ico" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Product+Sans"
+      rel="stylesheet"
+    />
+    <script src="baremux/index.js" defer></script>
+    <script src="epoxy/index.js" defer></script>
+    <script src="uv/uv.bundle.js" defer></script>
+    <script src="uv/uv.config.js" defer></script>
+    <script src="register-sw.js" defer></script>
+    <script src="search.js" defer></script>
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <div class="flex-center header-center dropIn unselectable">
+      <img id="banner-img" src="" alt="frostbyte banner" class="banner" />
+    </div>
+    <form autocomplete="off" id="uv-form" class="flex-center blurOut">
+      <input
+        autocomplete="false"
+        id="uv-search-engine"
+        value="https://www.bing.com/search?q=%s"
+        type="hidden"
+      />
+      <input
+        autocomplete="false"
+        id="uv-address"
+        type="text"
+        placeholder="Search without restrictions"
+      />
+    </form>
+    <p></p>
+    <div class="center-margin">
+      <p id="uv-error"></p>
+      <pre id="uv-error-code"></pre>
+    </div>
+    <div class="bottomText unselectable left">frostbyte</div>
+    <div class="bottomText unselectable right">
+      
+        href="https://github.com/iceycolduser/frostbyte"
+        rel="noopener"
+        target="_blank"
+        >Github</a
+      >
+    </div>
+    <iframe id="uv-frame" title="Proxy Content Frame"></iframe>
+  </body>
+</html>
