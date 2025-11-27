@@ -22,78 +22,53 @@
     <script src="search.js" defer></script>
     <script src="index.js" defer></script>
     <style>
-      body {
-        margin: 0;
-        padding: 0;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-      }
-      
-      .search-container {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 100%;
-        max-width: 600px;
-        padding: 20px;
-        box-sizing: border-box;
-      }
-      
       #uv-form {
-        width: 100%;
-        display: flex;
-        justify-content: center;
+        position: fixed !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        width: 90% !important;
+        max-width: 600px !important;
+        margin-top: 0 !important;
       }
       
       #uv-address {
-        width: 100%;
-        padding: 15px 20px;
-        font-size: 16px;
+        width: 100% !important;
+        padding: 15px 20px !important;
+        font-size: 16px !important;
         border-radius: 25px;
         border: 2px solid #ccc;
         box-sizing: border-box;
-        transition: border-color 0.3s;
-      }
-      
-      #uv-address:focus {
-        outline: none;
-        border-color: #4a90e2;
       }
       
       @media (max-width: 768px) {
-        .search-container {
-          padding: 15px;
+        #uv-form {
+          width: 90% !important;
         }
         
         #uv-address {
-          padding: 12px 15px;
-          font-size: 16px;
+          padding: 12px 15px !important;
         }
       }
     </style>
   </head>
   <body>
     <div class="flex-center header-center dropIn unselectable"></div>
-    
-    <div class="search-container">
-      <form autocomplete="off" id="uv-form" class="flex-center blurOut">
-        <input
-          autocomplete="false"
-          id="uv-search-engine"
-          value="https://www.bing.com/search?q=%s"
-          type="hidden"
-        />
-        <input
-          autocomplete="false"
-          id="uv-address"
-          type="text"
-          placeholder="Search without restrictions"
-        />
-      </form>
-    </div>
-    
+    <form autocomplete="off" id="uv-form" class="flex-center blurOut" style="display:flex; justify-content:center; width:100%; margin-top:50px;">
+      <input
+        autocomplete="false"
+        id="uv-search-engine"
+        value="https://www.bing.com/search?q=%s"
+        type="hidden"
+      />
+      <input
+        autocomplete="false"
+        id="uv-address"
+        type="text"
+        placeholder="Search without restrictions"
+        style="width:50%; padding:10px; font-size:16px;"
+      />
+    </form>
     <div class="center-margin">
       <p id="uv-error"></p>
       <pre id="uv-error-code"></pre>
