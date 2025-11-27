@@ -21,43 +21,11 @@
     <script src="register-sw.js" defer></script>
     <script src="search.js" defer></script>
     <script src="index.js" defer></script>
-    <style>
-      body {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        margin: 0;
-      }
-      
-      #uv-form {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-      
-      #uv-address {
-        min-width: 500px;
-        padding: 15px 20px;
-        font-size: 16px;
-        border-radius: 25px;
-        border: 2px solid #ccc;
-        box-sizing: border-box;
-      }
-      
-      @media (max-width: 768px) {
-        #uv-address {
-          min-width: 300px;
-          width: 90vw;
-          padding: 12px 15px;
-        }
-      }
-    </style>
   </head>
+
   <body>
     <div class="flex-center header-center dropIn unselectable"></div>
+
     <form autocomplete="off" id="uv-form" class="flex-center blurOut" style="display:flex; justify-content:center; width:100%; margin-top:50px;">
       <input
         autocomplete="false"
@@ -73,10 +41,12 @@
         style="width:50%; padding:10px; font-size:16px;"
       />
     </form>
+
     <div class="center-margin">
       <p id="uv-error"></p>
       <pre id="uv-error-code"></pre>
     </div>
+
     <div class="bottomText unselectable left">frostbyte v1.0.0</div>
     <div class="bottomText unselectable right">
       <a
@@ -86,6 +56,7 @@
         >Github</a
       >
     </div>
+
     <iframe id="uv-frame" title="Proxy Content Frame"></iframe>
   </body>
 </html>
