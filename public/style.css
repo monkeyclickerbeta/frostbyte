@@ -76,6 +76,8 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
